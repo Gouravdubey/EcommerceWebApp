@@ -1,0 +1,213 @@
+.formWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 60vw; */
+    background-color: #934de8;
+    align-self: center;
+    height: 100vh;
+    
+}
+
+.insideWrapper{
+display: flex;
+border-width: 1;
+border-color: black;
+background-color: white;
+height: 600px;
+padding: 20px;
+width: 400px;
+flex-direction: column;
+border-radius: 5px;
+align-items: center;
+justify-content: space-between;
+box-shadow: 0px 3px 20px -4px rgba(0,0,0,0.51);
+}
+
+.inputBox{
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    width: 300px;
+    flex-direction: row;
+    justify-content: space-between;
+    /* box-shadow: 0px 2px 5px 0px rgb(0, 0, 0, 42);
+     */
+     box-shadow: 0px 3px 20px -4px rgba(0,0,0,0.51);
+}
+
+/* input{
+    padding: 6px 6px 6px 6px;
+  /* border-radius: 10px; */
+  /* border-width: 0px; */
+  /* border-color: blue; */
+/* outline: none;
+}  */
+ 
+
+.buttonStyle{
+  background-color: green;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 200px;
+
+}
+.buttonStyle:hover{
+    background-color: purple;
+}
+/* label{
+    margin-left: 10px;
+} */
+.navContainer{
+  position: sticky;
+  top: 0;
+}
+/* ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #2d0ddf;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+} */
+
+.login_image{
+  height:  80vh;
+  width: 450px;
+}
+.main-container{
+  display: flex;
+  width: 65rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+
+}
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:white;
+  height: 100vh;
+}
+.imgMainContainer{
+ width: 40%;
+background:url("./assets/SignUpAsset.png") ;
+ /* background-color: red; */
+}
+.formMainContainer{
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  /* background-color: rgb(230, 73, 73); */
+}
+.formInnerContainer{
+  height: 65vh;
+  width: 27vw;
+  background-color:white;
+}
+h1{
+  height: 30px;
+}
+.progressLine{
+  width: 50px;
+  height: 8px;
+  border-radius: 6px;
+  background-color: blue;
+  margin-bottom: 20px;
+}
+.formFirstRow{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  width: 100%;
+}
+.fullNameContainer{
+   display: flex;
+   flex-direction: column;
+   width: 50%;
+}
+.dropDown{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.inputBoxStyle{
+  color: black;
+  border: 2px solid #f5f5f5;
+  border-radius: 2px;
+  padding: 6px 0px 6px 5px;
+  width: 85%;
+  outline: none;
+  margin-top: 10px;
+  border-radius: 5px;
+
+}
+#rightInputBox{
+display: flex;
+align-self: flex-end;
+}
+label{
+  font-weight: 700;
+  font-size: 12px;
+}
+.inputSelect{
+  color: black;
+  border: 2px solid #f5f5f5;
+  border-radius: 2px;
+  padding: 4px 0px 3px 5px;
+  width: 88%;
+  outline: none;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+.inputBoxStyle::placeholder{
+  color:lightgrey
+}
+.radioButtonContainer{
+  display: flex;
+  margin-top: 10px;
+  
+}
+.radioButton{
+  display: flex;
+  /* align-items: center; */
+  margin-right: 30px;
+}
+.genderContainer{
+  margin-top: 10px;
+}
+.btn{
+  color: white;
+  font-weight: 700;
+  border-radius: 10px ;
+  border-color: #3a5fcd;
+  background-color: #3a5fcd;
+  width: 95%;
+  height: 30px;
+  margin-top: 30px;
+}
+.signin-btn{
+  font-size: 10px;
+}
