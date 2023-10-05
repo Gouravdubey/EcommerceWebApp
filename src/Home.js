@@ -59,8 +59,8 @@ export class Home extends Component {
     render() {
         return (
             <>
-                <Box>
-                    <AppBar sx={{ background: "black", position: 'sticky' }}>
+                {/* <Box> */}
+                    <AppBar sx={{ background: "black", position: 'sticky',  }}>
                         <Box >
                             <Toolbar >
                                 <Box sx={{ display: { xs: "block", md: "none" } }}>
@@ -95,7 +95,7 @@ export class Home extends Component {
                             </Toolbar>
                         </Box>
                     </AppBar>
-                </Box>
+                {/* </Box> */}
             </>
         )
     }

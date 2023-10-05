@@ -7,6 +7,7 @@ import Product from './Product'
 import Services from './Services'
 import About from './About'
 import ProductDetails from './ProductDetails'
+import AddToCart from './AddToCart'
 export class App extends Component {
   render() {
     return (
@@ -19,9 +20,8 @@ export class App extends Component {
             <Route path='/contact/' element={<ContactUs />}></Route>
             <Route path='/services' element={<Services />}></Route>
             <Route path='/about' element={<About />}></Route>
-            <Route path='/details/:productId' element={<ProductDetails />}></Route>
-
-
+            <Route path='/details' element={<ProductDetails />}></Route>
+            <Route path='/cart' element={<AddToCart />}></Route>
             {/* <Route path='/SignUpUser' element={<SignUpUser />} /> */}
             {/* <SignUpUser/> */}
           </Routes>

@@ -9,7 +9,8 @@ import Rating from '@mui/material/Rating';
 import { createTheme, ThemeProvider } from '@mui/material';
 import Button from '@mui/material/Button';
 import styled from '@emotion/styled';
-import { Link ,useNavigation} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { appRouter } from './hoc';
 const theme = createTheme({
     components: {
         MuiTypography: {
@@ -35,6 +36,7 @@ const theme = createTheme({
         }
     }
 })
+
 export class Product extends Component {
     constructor() {
         super()
@@ -46,6 +48,9 @@ export class Product extends Component {
                     name: "Jeans",
                     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMsjNdQMhZGq1ezJRekXK4MEb6XYN4CFZcyXrlc78&s",
                     Rating: 2,
+                    getItBy:"12 Nov",
+                    easyReturn:"Available",
+                    cashOnDelivery:"Available",
                     Price: 1399,
                     Content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni, exercitationem."
                 },
@@ -55,6 +60,9 @@ export class Product extends Component {
                     name: "Shirt",
                     image: "https://media.istockphoto.com/id/498852901/photo/red-plaid-shirt.jpg?s=612x612&w=0&k=20&c=FN0dBgzq0_GDJo5fKwRyM-QDz37TUVxAGKK4o3TSLnI=",
                     Rating: 5,
+                    getItBy:"17 oct",
+                    easyReturn:"unAvailable",
+                    cashOnDelivery:"Available",
                     Price: 499,
                     Content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni, exercitationem."
                 },
@@ -64,6 +72,9 @@ export class Product extends Component {
                     name: 'Laptop',
                     image: "https://images.pexels.com/photos/205421/pexels-photo-205421.jpeg?cs=srgb&dl=pexels-craig-dennis-205421.jpg&fm=jpg",
                     Rating: 3.5,
+                    getItBy:"12 Nov",
+                    easyReturn:"Available",
+                    cashOnDelivery:"Available",
                     Price: 59800,
                     Content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni, exercitationem."
                 },
@@ -73,6 +84,9 @@ export class Product extends Component {
                     name: "Ghee",
                     image: "https://patankarfarmproducts.com/wp-content/uploads/2020/08/500-ml-ghee.jpg",
                     Rating: 2,
+                    getItBy:"09 Nov",
+                    easyReturn:"Available",
+                    cashOnDelivery:"unAvailable",
                     Price: 699,
                     Content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni, exercitationem."
                 },
@@ -82,6 +96,9 @@ export class Product extends Component {
                     name: 'Shoes',
                     image: "https://www.jiomart.com/images/product/500x630/rvnezaqnsd/bruton-running-shoes-for-men-product-images-rvnezaqnsd-0-202206141815.jpg",
                     Rating: 4.5,
+                    getItBy:"12 Nov",
+                    easyReturn:"Available",
+                    cashOnDelivery:"Available",
                     Price: 1579,
                     Content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni, exercitationem."
                 },
@@ -91,6 +108,9 @@ export class Product extends Component {
                     name: "Earphone",
                     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2eT_rx0-36stQ0fuAV9fSpjhrJnLbpu6ecg&usqp=CAU",
                     Rating: 2.5,
+                    getItBy:"12 Nov",
+                    easyReturn:"unAvailable",
+                    cashOnDelivery:"unAvailable",
                     Price: 665,
                     Content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni, exercitationem."
                 },
@@ -100,6 +120,9 @@ export class Product extends Component {
                     name: "Refrigerator",
                     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZBGZPjAEBh7i9FebCBtLlJxPpapyYH9RRCQ&usqp=CAU",
                     Rating: 1.5,
+                    getItBy:"27 Dec",
+                    easyReturn:"Available",
+                    cashOnDelivery:"Available",
                     Price: 13371,
                     Content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni, exercitationem."
                 },
@@ -109,6 +132,9 @@ export class Product extends Component {
                     name: "Bottle",
                     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStZsp5bCuITyTNQ6R-lM5eRAkyE_NnwlsI_Q&usqp=CAU",
                     Rating: 5,
+                    getItBy:"05 Jan",
+                    easyReturn:"Available",
+                    cashOnDelivery:"Available",
                     Price: 199,
                     Content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni, exercitationem."
                 },
@@ -118,6 +144,9 @@ export class Product extends Component {
                     name: "TV",
                     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjS00hdJwRLfbMK1k5fUaDe_fk3SqK5ROOyg&usqp=CAU",
                     Rating: 5,
+                    getItBy:"12 Nov",
+                    easyReturn:"Available",
+                    cashOnDelivery:"unAvailable",
                     Price: 'Nahi Btaunga',
                     Content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni, exercitationem."
                 },
@@ -125,6 +154,13 @@ export class Product extends Component {
         }
     }
 
+    buyNow = () => {
+        this.props.navigate("details")
+    }
+
+    onNavigate = (item) => {
+     this.props.navigate(`/details`, {state: item})
+    }
 
     render() {
 
@@ -136,17 +172,17 @@ export class Product extends Component {
                         justifyContent: "center",
                         alignItems: "center"
                     }}>
-                        {this.state.productData.map((e, i) =>
+                        {this.state.productData.map((item, i) =>
                             <Grid item xs={8} md={5} lg={4} xl={4} sm={7}>
                                 <ThemeProvider theme={theme}>
                                     <Paper elevation={6} >
                                         <Box >
-                                            <img src={e.image}
+                                            <img src={item.image}
                                                 className='img' height="400px" width='100%' style={{}} />
                                         </Box>
                                         <Box paddingX={1}>
                                             <Typography variant='subtitle1 ' component='h2'>
-                                                {e.name}
+                                                {item.name}
                                             </Typography>
                                             <Grid
                                                 container
@@ -155,18 +191,18 @@ export class Product extends Component {
                                             >
                                                 {/* <AccessTime sx={{ width: 12.5 }} /> */}
                                                 <Typography variant='body2' component='p' marginLeft={0.5}>
-                                                    {e.Content}
+                                                    {item.Content}
                                                 </Typography>
                                             </Grid>
                                             <Grid
                                                 container
                                                 marginTop={3}
                                             >
-                                                <Rating name='read-only' value={e.Rating} readOnly precision={.5} size='small' />
+                                                <Rating name='read-only' value={item.Rating} readOnly precision={.5} size='small' />
                                                 <Typography variant='body2' component='p' marginLeft={0.5}>
                                                 </Typography>
                                                 <Typography variant='body2' component='p' marginLeft={0.5}>
-                                                    ({e.Rating} reviews)
+                                                    ({item.Rating} reviews)
                                                 </Typography>
                                             </Grid>
                                             <Box sx={{
@@ -175,12 +211,14 @@ export class Product extends Component {
                                                 alignItems: "center",
                                             }}>
                                                 <Typography variant='h6' component='h3' marginTop={0}>
-                                                    {e.Price} Rs
+                                                    {item.Price} Rs
                                                 </Typography>
                                                 {/* <Button variant="contained" size="medium" >
                                                     Buy Now
                                                 </Button> */}
-                                                <Cbutton component={Link} to={`/details/${e}`}>buy Now</Cbutton>
+                                                {/* <Button component={Link} to={`/details/${item.id}`} >buy Now</Button> */}
+                                                <Button onClick={()=> this.onNavigate(item)}>buy Now</Button>
+
                                                 {/* <Link to='/details'>dsjbhc</Link> */}
                                             </Box>
                                         </Box>
@@ -205,4 +243,4 @@ const Cbutton = styled(Button)({
     }
 })
 
-export default Product
+export default appRouter(Product)

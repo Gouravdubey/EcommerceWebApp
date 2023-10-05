@@ -26,3 +26,17 @@ flex-direction: column;
     justify-content: center;
 }
 
+/* MEDIA QUERY */
+
+
+@media(max-width:1400px){
+    .productContainer{
+        width: 85%;
+    }
+}
+    /* @media(max-width:1140px){
+        Button{
+            width: 100px;
+            font-size: 5px;
+        }
+    } */
